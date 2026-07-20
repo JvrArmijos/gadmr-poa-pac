@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import useAuth from '../hooks/useAuth.js';
-import { User, Lock, Mail, Shield, Briefcase } from 'lucide-react';
+import { User, Lock, Mail, Shield, Briefcase, Eye, EyeOff } from 'lucide-react';
 
 const STATIC_ROLES = [
   { id: 1, nombre: 'Máxima autoridad / Alcaldía' },
@@ -30,6 +30,7 @@ export const Register = () => {
   
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -122,14 +123,26 @@ export const Register = () => {
               <span className="absolute inset-y-0 left-0 flex items-center pl-3 text-slate-400">
                 <Lock className="h-4 w-4" />
               </span>
-              <input 
-                type="password" 
-                required 
+
+              <input
+                type={showPassword ? "text" : "password"}
+                required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Mínimo 6 caracteres"
-                className="w-full bg-slate-50 dark:bg-slate-800 border rounded-xl pl-10 pr-3 py-2 focus:ring-2 focus:ring-[#8DA9C4] focus:outline-none"
+                className="w-full bg-slate-50 dark:bg-slate-800 border rounded-xl pl-10 pr-10 py-2.5 focus:ring-2 focus:ring-[#8DA9C4] focus:outline-none"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-[#134074]"
+              >
+                {showPassword ? (
+                  <EyeOff className="h-5 w-5" />
+                ) : (
+                  <Eye className="h-5 w-5" />
+                )}
+              </button>
             </div>
           </div>
 

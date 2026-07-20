@@ -1,10 +1,10 @@
 # Sistema Control POA/PAC - GAD Municipal de Riobamba (GADMR)
 
-Este proyecto consiste en la reorganización y separación completa del Sistema de Control de Plan Operativo Anual (POA) y Plan Anual de Contratación (PAC) del GAD Municipal de Riobamba, estructurado en base a **Arquitectura Limpia** con un Frontend moderno en React y un Backend seguro en Node.js + Express conectado a Microsoft SQL Server.
+Este proyecto consiste en la reorganización y separación completa del Sistema de Control de Plan Operativo Anual (POA) y Plan Anual de Contratación (PAC) del GAD Municipal de Riobamba, estructurado con un Frontend en React y un Backend  en Node.js + Express conectado a Microsoft SQL Server.
 
 ---
 
-## 🏢 Estructura de Carpetas
+## Estructura de Carpetas
 
 La arquitectura profesional se ha organizado de la siguiente manera:
 
@@ -51,11 +51,15 @@ Proyecto/
 
 ---
 
-## 🛠️ Instalación y Configuración
+## Instalación y Configuración
 
 ### 1. Base de Datos (Microsoft SQL Server)
-- Ejecute el contenido de [database/schema.sql](file:///c:/Users/JvrArmijos/Desktop/gadmr-poa-pac/database/schema.sql) en su instancia de SQL Server para crear la base de datos y sus respectivas tablas.
-- Ejecute el contenido de [database/seed.sql](file:///c:/Users/JvrArmijos/Desktop/gadmr-poa-pac/database/seed.sql) para poblar los roles, direcciones, partidas presupuestarias, proyectos iniciales y cuentas de prueba.
+Servidor SQL Server:
+Servidor : 192.168.0.101
+Base de datos : GADMR
+Usuario : usergadmr
+Contraseña : usergadmr26@
+
 
 ### 2. Configurar el Servidor (Backend)
 1. Ingrese a la carpeta del servidor:
@@ -92,19 +96,21 @@ Proyecto/
 
 ## 🔑 Credenciales de Prueba
 
-Los usuarios se encuentran sembrados con la contraseña **`Password123`**:
-
 1. **Máxima autoridad / Alcaldía:**
    - Correo: `alcalde@riobamba.gob.ec`
+   - Password: Alcalde123
    - Permiso: Visualización global de la cadena del gasto, consultas al chatbot y reportes ejecutivos.
 2. **Director/a de Gestión (Obras Públicas):**
    - Correo: `director.op@riobamba.gob.ec`
+   Password: Director123
    - Permiso: Registro y modificación exclusiva de proyectos pertenecientes a su Dirección.
 3. **Dirección Financiera:**
    - Correo: `finanzas@riobamba.gob.ec`
+   - Password: Finanzas123
    - Permiso: Control presupuestario global de proyectos y procesamiento efectivo de desembolsos/pagos.
 4. **Administrador:**
    - Correo: `admin@riobamba.gob.ec`
+   - Password: Admin123*
    - Permiso: Control total sobre el sistema, incluyendo eliminación de proyectos y monitoreo de logs de auditoría.
 
 ---
